@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     const inviteButton = document.getElementById('inviteButton')
     
     inviteButton.addEventListener('click', () => {
-        window.location.href = 'Women-day/main/main.html'
+        window.location.href = 'https://nguyenvanviet2004.github.io/Women-day/main/main.html'
     })
     checkScreenSize()
     window.addEventListener('resize', checkScreenSize)
@@ -17,7 +17,7 @@ function checkScreenSize() {
             confirmButtonText: 'OK',
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'Women-day/mobile_waring/mobile_warning.html'
+                window.location.href = 'https://nguyenvanviet2004.github.io/Women-day/mobile_waring/mobile_warning.html'
             }
         })
     } else {
