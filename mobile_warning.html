@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Required</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Thay đổi hướng để có thể căn giữa theo chiều dọc */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'JetBrains Mono', sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 10vw; 
+            color: #ff4d4d;
+            margin: 0;
+        }
+        h2 {
+            font-size: 5vw; 
+            color: #333;
+            margin: 0;
+        }
+        p {
+            font-size: 3vw; 
+            color: #555;
+            margin-top: 20px;
+        }
+        .language-toggle {
+            position: absolute; 
+            top: 20px;
+            right: 20px; 
+            padding: 10px 15px; 
+            background-color: #3085d6; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            font-size: 1.2em; 
+        }
+    </style>
+</head>
+
+<body>
+    <button class="language-toggle" id="language-toggle">EN</button>
+    <div>
+        <h1 id="main-heading">😞</h1>
+        <h2 id="sub-heading">I'm sorry, but this page is best viewed on a desktop.</h2>
+        <p id="instruction-1">To switch to desktop mode:</p>
+        <p id="instruction-2">1. Open your browser menu.</p>
+        <p id="instruction-3">2. Look for an option called "Request Desktop Site" or "Desktop Site".</p>
+        <p id="instruction-4">3. Select this option to reload the page in desktop mode.</p>
+    </div>
+
+    <script>
+        const texts = {
+            en: {
+                heading: "😞",
+                subheading: "I'm sorry, but this page is best viewed on a desktop.",
+                instruction1: "To switch to desktop mode:",
+                instruction2: "1. Open your browser menu.",
+                instruction3: '2. Look for an option called "Request Desktop Site" or "Desktop Site".',
+                instruction4: "3. Select this option to reload the page in desktop mode."
+            },
+            vi: {
+                heading: "😞",
+                subheading: "Xin lỗi, nhưng trang này nên được xem trên máy tính.",
+                instruction1: "Để chuyển sang chế độ máy tính:",
+                instruction2: "1. Mở menu trình duyệt của bạn.",
+                instruction3: '2. Tìm một tùy chọn gọi là "Yêu cầu trang web cho máy tính" hoặc "Trang web máy tính".',
+                instruction4: "3. Chọn tùy chọn này để tải lại trang trong chế độ máy tính."
+            }
+        }
+
+        let currentLanguage = 'en';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+            document.getElementById("language-toggle").innerText = currentLanguage === 'en' ? 'EN' : 'VI';
+            document.getElementById("main-heading").innerText = texts[currentLanguage].heading;
+            document.getElementById("sub-heading").innerText = texts[currentLanguage].subheading;
+            document.getElementById("instruction-1").innerText = texts[currentLanguage].instruction1;
+            document.getElementById("instruction-2").innerText = texts[currentLanguage].instruction2;
+            document.getElementById("instruction-3").innerText = texts[currentLanguage].instruction3;
+            document.getElementById("instruction-4").innerText = texts[currentLanguage].instruction4;
+        }
+
+        document.getElementById("language-toggle").addEventListener("click", toggleLanguage);
+    </script>
+</body>
+
+</html>
