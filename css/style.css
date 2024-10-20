@@ -112,7 +112,8 @@ body {
 }
 
 #inviteButton {
-  position: absolute;
+  position: fixed;
+  z-index: 10000;
   bottom: 50px; 
   background-color: var(--clr);
   color: white; 
